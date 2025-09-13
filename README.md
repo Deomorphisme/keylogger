@@ -61,7 +61,7 @@ If you are a security researcher or student, consider using this project in cont
 - [ ] Handle multiple keyloggers
 
 ## Misc
-- Only QWERTY and AZERTY layouts
+- Only QWERTY and AZERTY layouts are supported
 
 ---
 
