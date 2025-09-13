@@ -3,6 +3,6 @@
 
 #include <string>
 
-bool startKeyLogger(const std::string& devicePath, const std::string& logPath, const std::string& layout);
+bool startKeyLogger(const std::string& devicePath, const std::string& logPath);
 
 #endif

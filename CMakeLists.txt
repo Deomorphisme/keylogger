@@ -9,6 +9,7 @@ add_executable(keylogger
     src/keyboard_layout.cpp
     src/key_mapping.cpp
     src/datetime_utils.cpp
+    src/host_utils.cpp
 )
 
 target_include_directories(keylogger PRIVATE include)
