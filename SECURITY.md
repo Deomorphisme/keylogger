@@ -1,13 +1,12 @@
 
 # Security Policies
-***
 
 **Purpose:**
 This project is intended **solely for educational, research, or ethical security testing purposes**, such as penetration testing, cybersecurity research, or authorized red teaming exercises. It is designed to help security professionals and students understand how keyloggers work, their potential risks, and how to defend against them.
 
 
 ## **Legal and Ethical Use**
-***
+
 1. **Unauthorized Use is Illegal:**
    - Using this software to monitor or log keystrokes **without explicit, informed consent** from the target user or system owner is **illegal** in most jurisdictions.
    - Unauthorized use may violate laws such as:
@@ -36,7 +35,7 @@ This project is intended **solely for educational, research, or ethical security
    - Report vulnerabilities responsibly if discovered during testing.
 
 ## **Warning**
-***
+
 - This tool is **not** intended for illegal activities.
 - The author(s) **condemn** any use of this software for harmful or unethical purposes.
 - If you are unsure about the legality of your intended use, **consult a legal professional**.
@@ -46,7 +45,7 @@ By downloading, installing, or using this software, you acknowledge that you hav
 
 
 ## **Final Note**
-***
+
 If you are a security researcher or student, consider using this project in controlled environments (e.g., virtual machines, lab setups) to avoid accidental misuse.
 
 **Use responsibly. Stay legal. Stay ethical.**
