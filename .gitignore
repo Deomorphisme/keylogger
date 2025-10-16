@@ -1,1 +1,9 @@
 build
+test
+.vscode
+.DS_Store
+.idea
+*.log
+*.tmp
+dist
+.env
