@@ -32,7 +32,7 @@ bool isKeyboard(const std::string& device) {
         return false;
     }
 
-    // Check for common keyboard keys (e.g., KEY_A, KEY_ENTER)
+    // Check for common keyboard keys (KEY_A, KEY_ENTER, KEY_SPACE)
     bool hasKeys = false;
     for (int i = 0; i < KEY_MAX; ++i) {
         if (i == KEY_A || i == KEY_ENTER || i == KEY_SPACE) {
@@ -48,7 +48,7 @@ bool isKeyboard(const std::string& device) {
 }
 
 std::string get_device_name(){
-    for (int i = 0; i < 30; ++i) { // Check first 20 event devices
+    for (int i = 0; i < 30; ++i) { // Check first 30 event devices
         std::string device = "/dev/input/event";
         device = device + std::to_string(i);
 
