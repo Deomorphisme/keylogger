@@ -1,5 +1,5 @@
 build
-test
+tests
 .vscode
 .DS_Store
 .idea
