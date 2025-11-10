@@ -3,7 +3,7 @@
 
 ## Scope
 - [x] Linux terminal
-- [ ] X11
+- [x] X11
 - [ ] Wayland
 - [ ] Windows
 
