@@ -11,6 +11,7 @@ add_executable(keylogger
     src/key_mapping.cpp
     src/datetime_utils.cpp
     src/host_utils.cpp
+    src/config/Config.cpp
 )
 
 find_package(nlohmann_json REQUIRED)
